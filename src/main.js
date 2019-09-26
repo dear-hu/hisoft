@@ -10,6 +10,7 @@ Vue.prototype.$get=get;
 Vue.prototype.$post=post;
 Vue.config.productionTip = false;
 
+
 new Vue({
   router,
   store,
