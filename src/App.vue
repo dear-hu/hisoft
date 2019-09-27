@@ -1,37 +1,36 @@
 <template>
     <div id="app">
-
-        <div>
-            <p>
-                If Element is successfully added to this project, you'll see an
-                <code v-text="'<el-button>'"></code>
-                below
-            </p>
-            <el-button>el-button</el-button>
-        </div>
-        <router-view></router-view>
-
+        <el-container>
+            <el-header>
+                <Head></Head>
+            </el-header>
+            <el-main>
+                <router-view></router-view>
+            </el-main>
+        </el-container>
     </div>
 </template>
 
 <script>
     import HelloWorld from './components/HelloWorld.vue'
-
+    import Head from './components/head'
     export default {
         name: 'app',
         components: {
-            HelloWorld
+            HelloWorld,
+            Head
         }
     }
 </script>
 
 <style>
+    @import "common/reset.css";
     #app {
         font-family: 'Avenir', Helvetica, Arial, sans-serif;
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale;
         text-align: center;
         color: #2c3e50;
-        margin-top: 60px;
+
     }
 </style>
