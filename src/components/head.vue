@@ -18,10 +18,8 @@
                         </el-submenu>
                     </el-submenu>
                     <el-menu-item index="3" disabled>about</el-menu-item>
-                    <el-menu-item index="4">about</el-menu-item>
+                    <el-menu-item index="4" @click="cc">about</el-menu-item>
                 </el-menu>
-
-
             </el-col>
         </el-row>
 
@@ -45,6 +43,9 @@
                 console.log(this.pageType)
                 this.$router.push(`/${key}`)
                 console.log(key, keyPath);
+            },
+            cc(){
+               this.$emit('nun','子组件数据')
             }
         }
     };

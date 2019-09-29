@@ -8,6 +8,8 @@
         name:"about",
         mounted() {
             console.log(this.$route.query.state)
+        },
+        methods:{
 
         }
     }
