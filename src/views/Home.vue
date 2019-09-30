@@ -26,7 +26,7 @@
                 <el-input v-model="formInline.name" placeholder="请输入姓名"></el-input>
             </el-form-item>
             <el-form-item label="日期">
-                <el-date-picker type="date" placeholder="日期" v-model="formInline.date" value-format="yyyy-MM-dd" @change="getSTime"  style="width: 100%;"></el-date-picker>
+                <el-date-picker type="date" placeholder="日期" v-model="formInline.date" value-format="yyyy-MM-dd"  style="width: 100%;"></el-date-picker>
             </el-form-item>
             <el-form-item>
                 <el-button type="primary" @click="searchList">查询</el-button>
@@ -56,7 +56,7 @@
                 label="操作"
                 width="100">
                 <template slot-scope="scope">
-                    <el-button @click="handleClick(scope.row,0)" type="text" size="small">查看</el-button>
+                    <el-button type="text" size="small" @click="handleClick(scope.row,0)">查看</el-button>
                     <el-button type="text" size="small" @click="handleClick(scope.row,1)">编辑</el-button>
                 </template>
             </el-table-column>
@@ -70,11 +70,11 @@
             :total="this.total">
         </el-pagination>
 
-<!--
-        <el-button type="primary" @click="handle">主要按钮</el-button>
-        <el-button type="primary" @click="jumpPage('about')">about</el-button>
-        <router-link :to="{path:'about',query:{state:3}}">about</router-link>
-        <el-button type="primary" @nun="getZzjsj">主要按钮</el-button>-->
+        <!--
+                <el-button type="primary" @click="handle">主要按钮</el-button>
+                <el-button type="primary" @click="jumpPage('about')">about</el-button>
+                <router-link :to="{path:'about',query:{state:3}}">about</router-link>
+                <el-button type="primary" @nun="getZzjsj">主要按钮</el-button>-->
     </div>
 </template>
 

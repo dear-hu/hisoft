@@ -7,8 +7,8 @@
                     <el-menu-item index="home">home</el-menu-item>
                     <el-submenu index="2">
                         <template slot="title">about</template>
+                        <el-menu-item index="upload">upload</el-menu-item>
                         <el-menu-item index="about">about</el-menu-item>
-                        <el-menu-item index="2-2">about</el-menu-item>
                         <el-menu-item index="2-3">about</el-menu-item>
                         <el-submenu index="2-4">
                             <template slot="title">about</template>
@@ -17,7 +17,7 @@
                             <el-menu-item index="2-4-3">about</el-menu-item>
                         </el-submenu>
                     </el-submenu>
-                    <el-menu-item index="3" disabled>about</el-menu-item>
+                    <el-menu-item index="news">news</el-menu-item>
                     <el-menu-item index="4" @click="cc">about</el-menu-item>
                 </el-menu>
             </el-col>
