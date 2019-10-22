@@ -1,9 +1,10 @@
 import Vue from 'vue';
 import Router from 'vue-router';
-import Home from './views/Home.vue';
+import Home from './views/getAddress';
 import News from './views/list-article'
 import Article from './views/article-article'
 import Upload from './views/upload'
+import GetAddress from './views/getAddress'
 Vue.use(Router);
 
 export default new Router({
@@ -42,6 +43,11 @@ export default new Router({
             path: '/upload',
             name: 'upload',
             component: Upload,
+        },
+        {
+            path: '/getAddress',
+            name: 'getAddress',
+            component: GetAddress,
         },
 
     ],

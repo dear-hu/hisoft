@@ -1,5 +1,7 @@
 <template>
     <div class="head">
+        <p class="my-top-xj"><span v-for="item in 2">☆</span></p>
+
         <el-row>
             <el-col class="logo" :span="8">logo</el-col>
             <el-col :span="16" class="topNav">

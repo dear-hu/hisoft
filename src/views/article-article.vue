@@ -15,6 +15,7 @@
         mounted() {
             this.id = this.$route.params.id
             console.log(this.$route.params.id)
+            this.getArticle()
         },
         methods:{
            getArticle(){

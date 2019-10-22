@@ -30,7 +30,7 @@ axios.interceptors.request.use(config => {
 
 //http response 封装后台返回拦截器
 axios.interceptors.response.use(response => {
-     console.log(response)
+    console.log(response)
 
 //当返回信息为未登录或者登录失效的时候重定向为登录页面
     //   if (response.data.code == 'W_100004' || response.data.message == '用户未登录或登录超时，请登录！') {
@@ -60,17 +60,17 @@ axios.interceptors.response.use(response => {
  * @returns {Promise}
  */
 export function get(url,params={}){
-  return new Promise((resolve,reject) => {
-    axios.get(url,{
-      params:params
+    return new Promise((resolve,reject) => {
+        axios.get(url,{
+            params:params
+        })
+            .then(response => {
+                resolve(response.data);
+            })
+            .catch(err => {
+                reject(err)
+            })
     })
-      .then(response => {
-        resolve(response.data);
-      })
-      .catch(err => {
-        reject(err)
-      })
-  })
 }
 
 
@@ -82,13 +82,13 @@ export function get(url,params={}){
  */
 
 export function post(url,data = {}){
-  return new Promise((resolve,reject) => {
-    axios.post(url,data)
-      .then(response => {
-        resolve(response.data);
-      },err => {
-        reject(err)
-      })
-  })
+    return new Promise((resolve,reject) => {
+        axios.post(url,data)
+            .then(response => {
+                resolve(response.data);
+            },err => {
+                reject(err)
+            })
+    })
 }
 
