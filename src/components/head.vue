@@ -1,7 +1,7 @@
 <template>
     <div class="head">
-        <p class="my-top-xj"><span v-for="item in 2">☆</span></p>
-
+        <p class="my-top-xj" ><span v-for="item in 2">☆</span></p>
+        {{title.name}}{{title.age}}
         <el-row>
             <el-col class="logo" :span="8">logo</el-col>
             <el-col :span="16" class="topNav">
@@ -31,7 +31,7 @@
 <script>
     export default {
         name: 'head',
-        props: {},
+        props: ['title'],
         data() {
             return {
                 pageType:'',

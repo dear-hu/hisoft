@@ -1,49 +1,28 @@
 import Vue from 'vue';
 import Vuex from 'vuex';
-
+import contexts from "less/lib/less/contexts";
 Vue.use(Vuex);
-
-
-
 export default new Vuex.Store({
     state: {
-        name: 'test',
-        num:10
+        searchName:'',
+        searchAge:''
     },
     getters: {
-        test(state) {
-            console.log("getters==>")
-            console.log(state)
-            return state.name
-        },
-        jisuan(state){
-            return state.num
-        }
     },
 
     mutations: {
-        add(state){
-            console.log("mutations==>")
-            console.log(state)
-            state.num++
+        changeValue(state,newVal){
+            console.log(newVal)
+            state.searchName =  newVal
         },
-        cut(state){
-            console.log("mutations==>")
-            console.log(state)
-            state.num--
+        setAge(state,newVal){
+            state.searchAge = newVal
         }
     },
     actions: {
-        add1(context){
-            console.log("actions==>")
-            console.log(context)
-            console.log(state)
-            context.commit('add')
-        },
-        cut1(context){
-            console.log("actions==>")
-            console.log(context)
-            context.commit('cut')
+        changeAge(context,value){
+            console.log(value)
+            context.commit("setAge",value)
         }
     },
 });

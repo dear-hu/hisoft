@@ -1,10 +1,12 @@
 import Vue from 'vue';
 import Router from 'vue-router';
-import Home from './views/getAddress';
+import Home from './views/Home';
 import News from './views/list-article'
 import Article from './views/article-article'
 import Upload from './views/upload'
 import GetAddress from './views/getAddress'
+import Jieliufangdou from './views/jieliufangdou'
+
 Vue.use(Router);
 
 export default new Router({
@@ -49,6 +51,14 @@ export default new Router({
             name: 'getAddress',
             component: GetAddress,
         },
+        {
+            path: '/jieliufangdou',
+            name: 'jieliufangdou',
+            component: Jieliufangdou,
+        },
+
+
+
 
     ],
 });

@@ -1,6 +1,7 @@
 <template>
     <div class="home">
-
+        <Search></Search>
+        <router-link :to="{name:'about', query: {name:'ceshi', title: 'ceshi'} }">去B页面，传入参数</router-link>
 
         <el-dialog :title="this.type==0?'查看':'编辑'" :visible.sync="dialogFormVisible">
             <el-form :model="form">
@@ -79,9 +80,12 @@
 </template>
 
 <script>
+    import Search from './../components/search'
     export default {
         name: 'home',
-        components: {},
+        components: {
+            Search
+        },
         data() {
             return {
                 tableData: [{
@@ -114,11 +118,13 @@
                 formLabelWidth: '120px',
                 total:100,
                 pageCount:0,
-                type:''
+                type:'',
+                searchName:this.$store.state.searchName
             }
         },
         mounted(){
             this.getList()
+            console.log(this.$store.state.searchName)
         },
         methods: {
             getList(){
@@ -175,6 +181,35 @@
             },
             edit(){
 
+            },
+
+
+        },
+        computed:{
+            againSearch(){
+                return this.$store.state.searchName;
+            },
+            ageSearch(){
+                return this.$store.state.searchAge;
+            }
+
+        },
+        watch:{
+            againSearch(newVal, oldVal) {
+                console.log(newVal, oldVal)
+                let param = {
+                    searchName:newVal
+                }
+                this.formInline = {...param}
+                this.getList();
+            },
+            ageSearch(newVal, oldVal) {
+                console.log(newVal, oldVal)
+                let param2 = {
+                    age:newVal
+                }
+                this.formInline = {...param2}
+                this.getList();
             }
 
         }

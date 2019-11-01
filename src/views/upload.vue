@@ -18,6 +18,10 @@
                 imageUrl: ''
             };
         },
+        mounted(){
+            let aaa = this.$store.state.name;
+            console.log(aaa)
+        },
         methods: {
             handleAvatarSuccess(res, file) {
                 this.imageUrl = URL.createObjectURL(file.raw);

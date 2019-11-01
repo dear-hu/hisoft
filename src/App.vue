@@ -2,7 +2,8 @@
     <div id="app">
         <el-container>
             <el-header>
-                <Head></Head>
+                <Head :title="people"></Head>
+
             </el-header>
             <el-main>
                 <router-view></router-view>
@@ -14,8 +15,17 @@
 <script>
     import HelloWorld from './components/HelloWorld.vue'
     import Head from './components/head'
+
     export default {
         name: 'app',
+        data(){
+          return{
+              people:{
+                  name:"张三",
+                  age:20
+              }
+          }
+        },
         components: {
             HelloWorld,
             Head
