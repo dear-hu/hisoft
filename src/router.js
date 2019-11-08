@@ -6,6 +6,7 @@ import Article from './views/article-article'
 import Upload from './views/upload'
 import GetAddress from './views/getAddress'
 import Jieliufangdou from './views/jieliufangdou'
+import Radio from './views/radio'
 
 Vue.use(Router);
 
@@ -56,6 +57,12 @@ export default new Router({
             name: 'jieliufangdou',
             component: Jieliufangdou,
         },
+        {
+            path: '/radio',
+            name: 'radio',
+            component: Radio,
+        },
+
 
 
 

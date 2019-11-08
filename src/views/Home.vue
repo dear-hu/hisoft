@@ -80,6 +80,7 @@
 </template>
 
 <script>
+   /* import Vue from  'vue'*/
     import Search from './../components/search'
     export default {
         name: 'home',
@@ -119,12 +120,24 @@
                 total:100,
                 pageCount:0,
                 type:'',
-                searchName:this.$store.state.searchName
+                searchName:this.$store.state.searchName,
+                add:{},
+                arr:[1,2,3]
+
             }
         },
         mounted(){
             this.getList()
-            console.log(this.$store.state.searchName)
+            this.$set(this.arr,1,5);
+            console.log(this.arr) //[1,5,3]
+            this.$set(this.add,'name','zz');
+            console.log(this.add)//{name:zz}
+            for(var i=0;i<5;i++){
+                this.$set(this.add,'name','zz'+i);
+            }
+            console.log(this.add)//{name:zz}
+
+
         },
         methods: {
             getList(){
